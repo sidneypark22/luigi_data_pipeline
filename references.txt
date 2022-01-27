@@ -1,0 +1,16 @@
+How To Build a Data Processing Pipeline Using Luigi in Python on Ubuntu 20.04
+https://www.digitalocean.com/community/tutorials/how-to-build-a-data-processing-pipeline-using-luigi-in-python-on-ubuntu-20-04
+
+python -m venv luigi-venv
+. luigi-venv/bin/activate
+sudo sh -c ". luigi-venv/bin/activate ;luigid --background --port 8082"
+python -m luigi --module word-frequency GetTopBooks
+python -m luigi --module word-frequency GetTopBooks
+python -m luigi --module luigi_dw_etl RunJob
+luigi RunJob --module luigi_dw_etl --background --logdir "/Users/Sidney/GitLab/Toptal/Sidney-Park/log/"
+luigi RunJob --module luigi_dw_etl --logging-conf-file /Users/Sidney/GitLab/Toptal/Sidney-Park/logging.cfg
+
+
+
+How to Open a Port on a Windows or Mac Firewall
+https://www.lifewire.com/open-a-port-on-a-routers-or-computers-firewall-5072435
