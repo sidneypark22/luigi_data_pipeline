@@ -91,6 +91,9 @@ Since there are complicated transformations expected, a script is expected to be
 - pres.report_order_lines: This is the order line data, but the relevant fields from different tables are all consolidated into a single table.
 - pres.report_weblog_access: This is the weblog access data, but not much transformations have been applied. However, this data is critical to answer the reporting questions as part of the requirements and need to be presented for a reporting purpose.
 
+Although it is not built within the Luigi data pipeline, scripts to create the dimension and fact tables have been repared for modelling on fact_order_line as well as the update scripts, which are placed under redshift folder. These scripts were created within a short timeframe i.e. 6-8 hours therefore they are very simple but they should be at least able to demonstrate how the proper data warehouse design would have been if dimension modelling was taken in consideration.
+
+All the dimension tables are designed in SCD1 update except for the product where it was designed in SCD2 update to mainly capture changes in default price i.e. cost price as at time of an order placed.
 
 ### ETL tool
 
